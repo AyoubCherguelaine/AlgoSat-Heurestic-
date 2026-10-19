@@ -1,6 +1,6 @@
 def GetOneSol(sol,index):
-    solR=sol
-  
+    solR=list(sol)
+
     if sol[index] == 0 :
         solR[index] = 1
     else:

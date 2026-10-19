@@ -12,13 +12,15 @@ with open('bmc-ibm-7.txt') as f:
 
     while(i<1500):
         c = f.readline()
+        if not c.strip():
+            break
         s = Sat(c)
         AddClause(s)
         i=i+1
        
     sol=[]
-    nbVar=len( Clauses[0].ListVariable)
-    for i in range(len( Clauses[0].ListVariable)):
+    nbVar=max( Clauses[0].ListVariable)
+    for i in range(nbVar):
         sol.append(0) 
     # for clause in Clauses:
     #     print(clause.Display())
